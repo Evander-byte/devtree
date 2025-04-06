@@ -1,10 +1,15 @@
 import mongoose, { Schema } from "mongoose"
+import { User } from "../interfaces/User"
 
 const userSchema = new Schema({
-    name: {
+    handle: {
         type: String,
         require: true,
         trim: true
+    },
+    name: {
+        type: String,
+        require: true,
     },
     email: {
         type: String,
@@ -19,5 +24,5 @@ const userSchema = new Schema({
     },
 })
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model<User>('User', userSchema)
 export default User
