@@ -5,7 +5,8 @@ const userSchema = new Schema({
     handle: {
         type: String,
         require: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     name: {
         type: String,
@@ -15,7 +16,8 @@ const userSchema = new Schema({
         type: String,
         require: true,
         trim: true,
-        unique: true
+        unique: true,
+        lowercase: true
     },
     password: {
         type: String,
