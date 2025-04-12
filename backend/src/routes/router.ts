@@ -1,7 +1,8 @@
 import { Router } from "express"
 import { body } from "express-validator"
-import { createAccount, login } from "../handlers"
+import { createAccount, getAuthUser, login } from "../handlers"
 import { handleInputErros } from "../middleware/valiadtion"
+import { authenticate } from "../middleware/auth"
 
 const router = Router()
 
@@ -19,6 +20,10 @@ router.post('/auth/login',
     body('password').notEmpty().withMessage('Password is required'),
     handleInputErros,
     login)
+
+router.get('/user',
+    authenticate,
+    getAuthUser)
 
 
 

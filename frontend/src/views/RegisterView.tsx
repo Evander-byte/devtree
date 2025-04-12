@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import ErrorMessage from "../components/ErrorMessage"
 import { RegisterCredentials } from "../interfaces"
 import api from "../config/axios"

@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose"
-import { User } from "../interfaces/User"
+import { IUser } from "../interfaces/User"
 
 const userSchema = new Schema({
     handle: {
@@ -24,7 +24,11 @@ const userSchema = new Schema({
         require: true,
         trim: true
     },
+    description: {
+        type: String,
+        default: ''
+    }
 })
 
-const User = mongoose.model<User>('User', userSchema)
+const User = mongoose.model<IUser>('User', userSchema)
 export default User

@@ -1,9 +1,9 @@
 import type {Request, Response} from 'express'
-import { validationResult } from "express-validator";
+import { validationResult } from "express-validator"
 import slug from 'slug'
 import User from "../models/User"
 import { checkPassword, hasPassword } from '../utils/auth'
-import { generateJWT } from '../utils/jtw';
+import { generateJWT } from '../utils/jtw'
 
 
 export const createAccount = async (req: Request, res: Response) => {
@@ -65,4 +65,9 @@ export const login = async (req: Request, res: Response) => {
 
     res.send(token)
 
+    
+}
+
+export const getAuthUser = async (req: Request, res: Response) => {
+    res.json(req.user)
 }

@@ -6,7 +6,7 @@ export interface User {
     handle: string
     name: string
     email: string
-    password: string
+    description: string
 }
 
 export type RegisterCredentials = Pick<User, 'handle' | 'email' | 'name'> & {
@@ -17,3 +17,9 @@ export type RegisterCredentials = Pick<User, 'handle' | 'email' | 'name'> & {
 export type LoginCredencials = Pick<User, 'email'> & {
     password: ''
 }
+
+export interface DevTreeProps {
+    data: User
+}
+
+export type ProfileForm = Pick<User, 'handle' | 'description'>
