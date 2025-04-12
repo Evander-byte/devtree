@@ -13,3 +13,7 @@ export type RegisterCredentials = Pick<User, 'handle' | 'email' | 'name'> & {
     password: string
     password_confirmation: string
 }
+
+export type LoginCredencials = Pick<User, 'email'> & {
+    password: ''
+}
